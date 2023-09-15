@@ -32,3 +32,15 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+
+# Using this repo
+
+This repo is a starter kit and it is meant to be used for a new project. In case you want to integrate [Garchi CMS](https://garchi.co.uk) in your existing project, you can always use this repo as a reference to do so.
+
+To begin with provide your API key inside nuxt.config.ts -> runtimeConfig.
+
+Checkout server/utils/garchi.ts for helper functions.
+
+An example page component could be found at pages/garchidemo.vue
