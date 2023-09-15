@@ -39,8 +39,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 This repo is a starter kit and it is meant to be used for a new project. In case you want to integrate [Garchi CMS](https://garchi.co.uk) in your existing project, you can always use this repo as a reference to do so.
 
-To begin with provide your API key inside nuxt.config.ts -> runtimeConfig.
+To begin with provide your API key inside .env file.
 
-Checkout server/utils/garchi.ts for helper functions.
+Checkout /utils/garchi.ts for helper functions.
 
-An example page component could be found at pages/garchidemo.vue
+An example page component could be found at app/garchidemopage/page.tsx
