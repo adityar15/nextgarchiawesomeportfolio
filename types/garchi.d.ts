@@ -10,10 +10,51 @@ export type GarchiSection = {
     id: string;
     name: string;
     props: {
-        [key: string]: any;
+        [key: string]: unknown;
     };
     children: GarchiSection[];
     order: number;
+}
+
+
+export type GarchiReviewCreate = {
+    item_id: number;
+    rating: number;
+    review_body: string;
+    user_email: string;
+    user_name: string;
+    parent_id?: number;
+}
+
+export type GarchiReactionCreate = {
+    reaction: string;
+    user_identifier: string;
+    review_id: number;
+    item_id: number;
+    reaction_for: "review" | "item";
+}
+
+export type GarchiReaction = {
+    reaction_id: string;
+    reaction: string;
+    user_identifier: string;
+    created_at: string;
+    updated_at: string;
+}
+
+export type GarchiReview = {
+    review_id: number;
+    review_body: string;
+    rating: number;
+    guest: null;
+    user: {
+        fname: string;
+        lname: string;
+    };
+    item_id: number;
+    reviewed_at: string;
+    replies: GarchiReview[];
+    reactions: GarchiReaction[];
 }
 
 export type GarchiCategory = {
@@ -58,8 +99,8 @@ export type GarchiItem = {
     external_link: string;
     scratched_price: number | null;
     one_liner: string;
-    description: string;
-    delivery_type: string;
+    description?: string;
+    delivery_type?: string;
     main_image: string;
     other_images: string[];
     attributes: GarchiAttribute[];
@@ -67,6 +108,7 @@ export type GarchiItem = {
     avg_rating: number | null;
     scheduled_for: string | null;
     item_meta: GarchiItemMeta[];
+    reactions?: GarchiReaction[];
     created: string;
     updated: string;
 }
