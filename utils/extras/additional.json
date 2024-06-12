@@ -96,5 +96,15 @@
                 "type": "text"
             }
         ]
+    },
+    {
+        "name": "SVGMaskParagraph",
+        "description": "SVGMaskParagraph",
+        "props" : [
+            {
+                "key": "text",
+                "type": "longtext"
+            }
+        ]
     }
 ]
