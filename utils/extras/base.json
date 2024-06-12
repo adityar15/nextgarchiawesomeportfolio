@@ -1,0 +1,347 @@
+[
+  {
+    "name": "Herocontainer",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "heading",
+        "type": "text",
+        "allowed_values": ""
+      },
+      {
+        "key": "content",
+        "type": "longtext",
+        "allowed_values": null
+      }
+    ]
+  },
+  {
+    "name": "Features",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "heading",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "subheading",
+        "type": "text",
+        "allowed_values": null
+      }
+    ]
+  },
+  {
+    "name": "FeatureItem",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "description",
+        "type": "longtext",
+        "allowed_values": ""
+      },
+      {
+        "key": "name",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "icon",
+        "type": "select",
+        "allowed_values": "Arrow,ChevronArrowRight,ChevronDownArrow,ChevronRightArrow"
+      }
+    ]
+  },
+  {
+    "name": "Logo",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "src",
+        "type": "media",
+        "allowed_values": null
+      }
+    ]
+  },
+  {
+    "name": "Portfolioheader",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "heading",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "content",
+        "type": "richtext",
+        "allowed_values": ""
+      }
+    ]
+  },
+  {
+    "name": "SocialLink",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "href",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "label",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "icon",
+        "type": "select",
+        "allowed_values": "TwitterIcon,InstagramIcon,GitHubIcon,LinkedInIcon,MailIcon"
+      }
+    ]
+  },
+  {
+    "name": "Photos",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "img1",
+        "type": "media",
+        "allowed_values": null
+      },
+      {
+        "key": "img5",
+        "type": "media",
+        "allowed_values": null
+      },
+      {
+        "key": "img4",
+        "type": "media",
+        "allowed_values": null
+      },
+      {
+        "key": "img3",
+        "type": "media",
+        "allowed_values": null
+      },
+      {
+        "key": "img2",
+        "type": "media",
+        "allowed_values": null
+      }
+    ]
+  },
+  {
+    "name": "ArticlesNLCV",
+    "description": null,
+    "prev_name": "",
+    "props": []
+  },
+  {
+    "name": "Newsletter",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "title",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "description",
+        "type": "longtext",
+        "allowed_values": null
+      },
+      {
+        "key": "buttonText",
+        "type": "text",
+        "allowed_values": null
+      }
+    ]
+  },
+  {
+    "name": "Resume",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "title",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "buttonText",
+        "type": "text",
+        "allowed_values": null
+      }
+    ]
+  },
+  {
+    "name": "Role",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "start",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "end",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "title",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "company",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "logo",
+        "type": "media",
+        "allowed_values": null
+      }
+    ]
+  },
+  {
+    "name": "Brief",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "title",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "content",
+        "type": "richtext",
+        "allowed_values": null
+      }
+    ]
+  },
+  {
+    "name": "Portrait",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "portraitImage",
+        "type": "media",
+        "allowed_values": null
+      }
+    ]
+  },
+  {
+    "name": "SocialLinks",
+    "description": null,
+    "prev_name": "",
+    "props": []
+  },
+  {
+    "name": "AboutSocialLink",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "href",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "text",
+        "type": "text",
+        "allowed_values": null
+      },
+      {
+        "key": "icon",
+        "type": "text",
+        "allowed_values": null
+      }
+    ]
+  },
+  {
+    "name": "Title",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "title",
+        "type": "text",
+        "allowed_values": ""
+      }
+    ]
+  },
+  {
+    "name": "BlogList",
+    "description": null,
+    "prev_name": "",
+    "props": []
+  },
+  {
+    "name": "FormInput",
+    "description": null,
+    "prev_name": "",
+    "props": [
+      {
+        "key": "name",
+        "type": "text",
+        "allowed_values": ""
+      },
+      {
+        "key": "placeholder",
+        "type": "text",
+        "allowed_values": ""
+      },
+      {
+        "key": "required",
+        "type": "select",
+        "allowed_values": "yes,no"
+      },
+      {
+        "key": "select_options",
+        "type": "longtext",
+        "allowed_values": ""
+      },
+      {
+        "key": "select_key",
+        "type": "text",
+        "allowed_values": ""
+      },
+      {
+        "key": "select_value",
+        "type": "text",
+        "allowed_values": ""
+      },
+      {
+        "key": "type",
+        "type": "select",
+        "allowed_values": "text,textarea,select,email,password"
+      }
+    ]
+  },
+  {
+    "name": "TestOne",
+    "description": null,
+    "prev_name": "",
+    "props": []
+  },
+  {
+    "name": "asdkasdlkajsldkjadklsajdlkasdjalksdjalsdjaslkdjaslkdjalksdjad",
+    "description": null,
+    "prev_name": "",
+    "props": []
+  }
+]

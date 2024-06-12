@@ -14,8 +14,8 @@ export default function GarchiComponent({ section }: Props) {
         return <></>
 
     //   assuming all components that registered on Garchi are kept in components/garchi folder
-
-    const Component = dynamic(() => import(`./${section.name}`).catch( err => {
+    const Component = dynamic(() => import(`./${section.description}`).catch( err => {
+       
         const ErrorComponent = () => <></>
         ErrorComponent.displayName = 'ErrorComponent'
         return ErrorComponent
@@ -26,6 +26,7 @@ export default function GarchiComponent({ section }: Props) {
         subSections: section.children
     } : section.props
 
+   
     return (
         <Component {...componentProps} />
     )

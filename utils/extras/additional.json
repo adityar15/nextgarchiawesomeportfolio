@@ -1,0 +1,100 @@
+[
+    {
+        "name": "AuroraBackgroundContainer",
+        "description": "AuroraBackgroundContainer",
+        "prev_name": "AuroraBackground",
+        "props": [
+            {
+                "key": "line_1",
+                "type": "text"
+            },
+            {
+                "key": "line_2",
+                "type": "text"
+            },
+            {
+                "key": "words",
+                "type": "text"
+            },
+            {
+                "key": "is_flip",
+                "type": "select",
+                "allowed_values": "yes,no"
+            }
+        ]
+    },
+
+    {
+        "name": "HoverCardContainer",
+        "description": "HoverCardContainer"
+    },
+
+    {
+        "name": "HoverCard",
+        "description": "HoverCard",
+        "props" : [
+            {
+                "key": "title",
+                "type": "text"
+            },
+            {
+                "key": "description",
+                "type": "text"
+            },
+            {
+                "key": "link",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "FancyParagraph",
+        "description": "FancyParagraph",
+        "props" : [
+            {
+                "key": "text",
+                "type": "longtext"
+            }
+        ]
+    },
+    {
+        "name": "SpotlightPreview",
+        "description": "SpotlightPreview",
+        "props" : [
+            {
+                "key": "description",
+                "type": "longtext"
+            },
+            {
+                "key": "title",
+                "type": "text"
+            }
+        ]
+    },
+    {
+        "name": "TracingBeamContainer",
+        "description": "TracingBeamContainer"
+    },
+    {
+        "name": "TracingBeam",
+        "description": "TracingBeam",
+        "props" : [
+            {
+                "key": "title",
+                "type": "text"
+            },
+            {
+                "key": "description",
+                "type": "richtext"
+            },
+            {
+                "key": "image",
+                "type": "media"
+            },
+            {
+                "key": "badge",
+                "type": "text"
+            }
+        ]
+    }
+]

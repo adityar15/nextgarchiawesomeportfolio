@@ -9,6 +9,7 @@ export type GarchiPage = {
 export type GarchiSection = {
     id: string;
     name: string;
+    description?: string;
     props: {
         [key: string]: unknown;
     };

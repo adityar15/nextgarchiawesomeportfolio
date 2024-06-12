@@ -18,7 +18,12 @@ class GarchiHelper {
     async garchiPostRequest(endpoint: string, payload: any){
         const response = await fetch(`${this.GARCHI_URL}/${endpoint}`, {
             method: 'POST',
-            headers: this.baseHeaders,
+            headers: {
+                ...this.baseHeaders,
+            },
+            next: {
+                revalidate: 10
+            },
             body: JSON.stringify(payload)
         })
         return await response.json()
