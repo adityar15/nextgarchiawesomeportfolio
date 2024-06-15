@@ -34,16 +34,16 @@ export default function AuroraBackgroundContainer({
             >
                 {
                     is_flip == "no" ? <>
-                        <div className="text-3xl md:text-7xl font-bold dark:text-white text-center">
+                        <div className="text-3xl md:text-7xl font-bold text-white text-center">
                             {line_1}
                         </div>
-                        <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
+                        <div className="font-extralight text-base md:text-4xl text-neutral-200 py-4">
                             {line_2}
                         </div>
                     </> : <>
 
                         <div className="h-[40rem] flex justify-center items-center px-4">
-                            <div className="text-4xl mx-auto font-normal text-neutral-600 dark:text-neutral-400">
+                            <div className="text-4xl mx-auto font-normal text-neutral-400">
                                 {line_1}
                                 <FlipWords words={wordsArray} /> <br />
                                 {line_2}

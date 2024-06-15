@@ -1,5 +1,6 @@
 "use client";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import Container from "../ui/container";
 
 export default function FancyParagraph({
     text,
@@ -9,8 +10,8 @@ export default function FancyParagraph({
     [key: string]: unknown
 }) {
     return (
-        <div className="max-w-5xl p-2 mx-auto">
+        <Container>
             <TextGenerateEffect words={text} {...props} />
-        </div>
+        </Container>
     )
 }

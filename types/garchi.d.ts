@@ -92,6 +92,7 @@ export type GarchiItemMeta = {
 
 export type GarchiItem = {
     item_id: number;
+    slug: string;
     sku: string;
     name: string;
     stock: number;

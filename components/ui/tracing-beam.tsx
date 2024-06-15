@@ -9,12 +9,15 @@ import {
 } from "framer-motion";
 import { cn } from "@/utils/cn";
 
+
 export const TracingBeam = ({
   children,
   className,
 }: {
   children: React.ReactNode;
   className?: string;
+  isMarkDown?: boolean;
+  markdown?: string;
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -122,7 +125,11 @@ export const TracingBeam = ({
           </defs>
         </svg>
       </div>
-      <div ref={contentRef}>{children}</div>
+      {
+         <div ref={contentRef}>
+          {children}
+         </div>
+      }
     </motion.div>
   );
 };

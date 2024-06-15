@@ -2,7 +2,7 @@
     {
         "name": "AuroraBackgroundContainer",
         "description": "AuroraBackgroundContainer",
-        "prev_name": "AuroraBackground",
+        "prev_name": "",
         "props": [
             {
                 "key": "line_1",
@@ -104,6 +104,35 @@
             {
                 "key": "text",
                 "type": "longtext"
+            }
+        ]
+    },
+    {
+        "name": "Heading",
+        "description": "Heading",
+        "props" : [
+            {
+                "key": "text",
+                "type": "text"
+            },
+            {
+                "key": "level",
+                "type": "select",
+                "allowed_values": "h1,h2,h3,h4,h5,h6"
+            }
+        ]
+    },
+    {
+        "name": "Markdown",
+        "description": "Markdown",
+        "props" : [
+            {
+                "key": "content",
+                "type": "richtext"
+            },
+            {
+                "key": "className",
+                "type": "text"
             }
         ]
     }

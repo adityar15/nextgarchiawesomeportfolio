@@ -1,4 +1,8 @@
-import Page from '@/components/garchi/Page'
+import loadItems from "@/actions/garchi-actions"
+import Pagination from "@/components/app/Pagination"
+import Heading from "@/components/garchi/Heading"
+import { HoverEffect } from "@/components/ui/card-hover-effect"
+import Container from "@/components/ui/container"
 
 
 const steps = [
@@ -9,11 +13,32 @@ const steps = [
   "Check out utils/garchi.ts for helper functions",
 ]
 
+type Props = {
+  searchParams?: {
+    page?: string;
+  };
+}
+export default async function Home({ searchParams }: Props) {
 
-export default function Home() {
+  const articles = await loadItems(searchParams?.page ? parseInt(searchParams.page) : 1)
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <Page slug="/" />
-    </main>
+    <Container className="my-10 flex flex-col gap-10">
+      <Heading level="h1" text="From the blog" />
+
+      <div className="grid grid-cols-3 gap-2">
+        {articles.data.map((article, index) => {
+          return <HoverEffect key={index} idx={index} title={article.name}
+            description={article.one_liner}
+            link={`/blog/${article.slug}`} />
+        })}
+
+      </div>
+
+
+
+      <Pagination lastPage={articles.meta.last_page} current={articles.meta.current_page} />
+    </Container>
   )
 }

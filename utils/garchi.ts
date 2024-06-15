@@ -34,6 +34,9 @@ class GarchiHelper {
         const response = await fetch(`${this.GARCHI_URL}/${endpoint}`, {
             method: 'GET',
             headers: this.baseHeaders,
+            next: {
+                revalidate: 10
+            }
         })
         return await response.json()
     }
