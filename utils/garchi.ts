@@ -2,8 +2,9 @@ import { GarchiAsset, GarchiPage } from "@/types/garchi"
 
 class GarchiHelper {
 
-    private baseHeaders : {[x:string] : any }
+    private baseHeaders: { [x: string]: any }
     private GARCHI_URL: string
+    private controller: AbortController | null
 
     constructor() {
         this.baseHeaders = {
@@ -12,10 +13,11 @@ class GarchiHelper {
             'Authorization': `Bearer ${process.env.GARCHI_API_KEY}`
         }
         this.GARCHI_URL = process.env.GARCHI_API_URL as string
+        this.controller = null
     }
 
     // function to make POST API requests to Garchi
-    async garchiPostRequest(endpoint: string, payload: any){
+    async garchiPostRequest(endpoint: string, payload: any) {
         const response = await fetch(`${this.GARCHI_URL}/${endpoint}`, {
             method: 'POST',
             headers: {
@@ -30,21 +32,37 @@ class GarchiHelper {
     }
 
     // function to make GET API requests to Garchi
-    async garchiGetRequest(endpoint: string){
-        const response = await fetch(`${this.GARCHI_URL}/${endpoint}`, {
+    async garchiGetRequest(endpoint: string, noCache: boolean = true) {
+        if (this.controller)
+            this.controller.abort()
+
+        this.controller = new AbortController()
+
+        let options: RequestInit = {
             method: 'GET',
             headers: this.baseHeaders,
-            next: {
+            signal: this.controller.signal
+        }
+
+        if (noCache)
+            options.next = {
                 revalidate: 10
             }
-        })
-        return await response.json()
+        else
+            options.cache = "no-store"
+
+
+        try {
+            const response = await fetch(`${this.GARCHI_URL}/${endpoint}`, options)
+            return await response.json()
+        } catch (error) {
+           console.log("error", error)
+        }
     }
 
     // example function to call page api using garchiPostRequest
-    async getGarchiPage(spaceUID: string, mode: "draft" | "live" = "draft" ,pageSlug: string = "/") : 
-        Promise<GarchiPage>
-    {
+    async getGarchiPage(spaceUID: string, mode: "draft" | "live" = "draft", pageSlug: string = "/"):
+        Promise<GarchiPage> {
         const response = await this.garchiPostRequest("page", {
             space_uid: spaceUID,
             mode,
@@ -53,10 +71,9 @@ class GarchiHelper {
 
         return response
     }
-    
+
     // example function to call asset api using garchiGetRequest
-    async getGarchiAsset(spaceUID: string, assetName: string) : Promise<GarchiAsset>
-    {
+    async getGarchiAsset(spaceUID: string, assetName: string): Promise<GarchiAsset> {
         const response = await this.garchiGetRequest(`space/assets/${assetName}?space_uid=${spaceUID}`)
         return response
     }

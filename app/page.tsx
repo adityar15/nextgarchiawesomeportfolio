@@ -1,30 +1,34 @@
-import loadItems from "@/actions/garchi-actions"
+import loadItems, { semanticSearch } from "@/actions/garchi-actions"
 import Pagination from "@/components/app/Pagination"
 import Heading from "@/components/garchi/Heading"
+import SearchBox from "@/components/garchi/SearchBox"
 import { HoverEffect } from "@/components/ui/card-hover-effect"
 import Container from "@/components/ui/container"
+import { GarchiItem } from "@/types/garchi"
 
 
-const steps = [
-  "Provide your api key in .env",
-  "Create your first page on <a className='underline text-red-500' href='https://garchi.co.uk'>Garchi CMS</a>",
-  "Check out components/garchi folder for example components",
-  "Check out types/garchi.d.ts for types",
-  "Check out utils/garchi.ts for helper functions",
-]
 
 type Props = {
   searchParams?: {
     page?: string;
+    query?: string;
   };
 }
 export default async function Home({ searchParams }: Props) {
 
+
   const articles = await loadItems(searchParams?.page ? parseInt(searchParams.page) : 1)
 
+   
+  let searchedArticles
+  
+  if(searchParams?.query){
+    searchedArticles = await semanticSearch(searchParams.query)
+  }
 
   return (
     <Container className="my-10 flex flex-col gap-10">
+      <SearchBox dataset={(searchedArticles?.data as GarchiItem[])} labels={['name', 'one_liner']} />
       <Heading level="h1" text="From the blog" />
 
       <div className="grid grid-cols-3 gap-2">
