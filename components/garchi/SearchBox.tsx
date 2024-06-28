@@ -40,7 +40,7 @@ export default function SearchBox({
 
     const searchParams = useSearchParams()
     const pathname = usePathname();
-    const { replace } = useRouter();
+    const { replace, push } = useRouter();
 
     useEffect(() => {
         // listen for keydown events
@@ -82,7 +82,7 @@ export default function SearchBox({
 
     const handleItemChange = (item: any) => {
         if(!item) return
-        replace(`/blog/${item?.slug}`)
+        push(`/blog/${item?.slug}`)
     }
 
 
