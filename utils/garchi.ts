@@ -4,7 +4,7 @@ class GarchiHelper {
 
     private baseHeaders: { [x: string]: any }
     private GARCHI_URL: string
-    private controller: AbortController | null
+
 
     constructor() {
         this.baseHeaders = {
@@ -13,7 +13,6 @@ class GarchiHelper {
             'Authorization': `Bearer ${process.env.GARCHI_API_KEY}`
         }
         this.GARCHI_URL = process.env.GARCHI_API_URL as string
-        this.controller = null
     }
 
     // function to make POST API requests to Garchi
@@ -33,15 +32,10 @@ class GarchiHelper {
 
     // function to make GET API requests to Garchi
     async garchiGetRequest(endpoint: string, noCache: boolean = true) {
-        if (this.controller)
-            this.controller.abort()
-
-        this.controller = new AbortController()
 
         let options: RequestInit = {
             method: 'GET',
             headers: this.baseHeaders,
-            signal: this.controller.signal
         }
 
         if (noCache)
